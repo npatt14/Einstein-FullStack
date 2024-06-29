@@ -6,25 +6,32 @@ const cors = require('cors');
 
 
 const app = express();
-const PORT = process.env.PORT || 5006;
+const PORT = 3000;
 
 app.use(express.json());
 app.use(cors()); //Middleware for handling CORS Policy
-app.use(express.static(path.join(__dirname, '../client/src')));
+
+// app.use(express.static(path.join(__dirname, '../dist')));
 
 
-app.use('*', (req, res) => {
-    return res.status(200).send('Welcome to Einstein');
+app.get('*', (req, res) => {
+    console.log('Hit Server');
+    res.sendFile(path.join(__dirname, '../client/src/index.html'));
 });
 
-mongoose
-    .connect(mongoDBURL)
-    .then(() => {
-        console.log('Connected to MDB');
-        app.listen(PORT, () => {
-            console.log(`app is listening on port ${PORT}`);
-        })
+// mongoose
+//     .connect(mongoDBURL)
+//     .then(() => {
+//         console.log('Connected to MDB');
+//     })
+//     .catch((error) => {
+//         console.log(error);
+//     });
+app.listen(PORT, () => {
+        console.log(`app is listening on port ${PORT}`);
     })
-    .catch((error) => {
-        console.log(error);
-    });
+
+
+
+
+    
