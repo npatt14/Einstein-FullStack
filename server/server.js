@@ -15,7 +15,8 @@ app.use(cors()); //Middleware for handling CORS Policy
 
 
 app.get('*', (req, res) => {
-    console.log('Hit Server');
+    console.log('Nick is taller than Edwin');
+    console.log(path.join(__dirname, '../client/src/index.html'));
     res.sendFile(path.join(__dirname, '../client/src/index.html'));
 });
 
