@@ -3,6 +3,7 @@ const path = require('path');
 const mongoose = require('mongoose');
 const mongoDBURL = require('./config.js');
 const cors = require('cors');
+const history = require ('connect-history-api-fallback');
 
 
 const app = express();
@@ -10,6 +11,7 @@ const PORT = 3000;
 
 app.use(express.json());
 app.use(cors()); //Middleware for handling CORS Policy
+app.use(history());
 
 // app.use(express.static(path.join(__dirname, '../dist')));
 

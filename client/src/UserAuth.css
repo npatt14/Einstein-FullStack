@@ -1,104 +1,35 @@
-.blank {
-    width: 20%;
-    background-color: #f0f0f0;
-    padding: 10px;
+* {
+    padding: 0px;
+    margin: 0px;
+    font-family: 'Courier New', Courier, monospace;
     box-sizing: border-box;
   }
   
-  .feed {
-    width: 60%;
-    overflow-y: scroll;
-    background-color: #fff;
-    /* padding-left: 300px; */
-    margin-left: 50px;
-    box-sizing: border-box;
-    align-items: center;
-  }
-  
-  .tab-bar {
-    width: 30%;
-    background-color: #f0f0f0;
-    padding: 10px;
-    box-sizing: border-box;
-  }
-  
-  .eureka-shadow {
-    position: relative;
-    width: 600px;
-    height: 200px;
-    background-color: black;
-    border-radius: 10px;
-    margin: 20px;
-  }
-  
-  .eureka {
-    position: absolute;
-    top: -10px;
-    left: -10px;
-    width: 600px;
-    height: 200px;
-    background-color: white;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  body {
+    font-family: 'Poppins', sans-serif; 
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
     display: flex;
-    align-items: center;
     justify-content: center;
-    padding: 20px;
-    box-sizing: border-box;
-    border: 3px solid black;
-  }
-  
-   .content-contianer {
-    display: flex;
-    flex-direction: column;
-  }
-  
-  .picture-title-date {
-    display: flex;
     align-items: center;
-    
+    min-height: 100vh;
+    background-color: black;
+    background-size: cover;
+    background-position: center;
   }
-  
-  .picture-title-date h3{
-    color: gray;
-    padding-left: 375px;
-    font-size: 16px;
-  }
-  
-  .picture-title-date h2{
-    padding-left: 10px;
-    font-size: 16px;
-    color: gray;
-  }
-  
-  .picture-title-date h1{
-    padding-left: 10px;
-    font-size: 32px;
-  }
-  
-  .body {
-    margin-top: 10px;
-    white-space: pre-wrap;
-  }
-  
-  /* TAB BAR  */
-   .brand {
-    display: flex;
-    padding-top: 10px;
-  }
-  .logo img {
-    width: 100px;
-    height: auto;
-  }
-  
-  .brandName {
-    font-weight: 1200;
-    font-size: 28px;
-    padding-top: 20px;
-    padding-left: 10px;
-  } 
 
-  .wrapper {
+
+
+
+
+
+
+
+
+
+
+
+.wrapper {
     width: 420px;
     background: transparent;
     background-color: black;
@@ -304,7 +235,3 @@
   .authButton {
     color: black;
   }
-
-  
-  
-   

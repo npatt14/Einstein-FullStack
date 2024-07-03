@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import {FaUser, FaLock} from "react-icons/fa";
 import { Link, useNavigate } from "react-router-dom"; // link replaces <a> anchor, allowing us to navigate between different routes in our SPA without triggering a full page reload
+import '../UserAuth.css';
 
 const LogIn = () => {
     const [username, setUsername] = useState('');
