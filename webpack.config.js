@@ -20,8 +20,11 @@ module.exports = {
         },
       },
       {
-        test: /\.css$/,
-        use: ['style-loader', 'css-loader'],
+        test: /\.css$/, 
+        use: [
+          'style-loader', // injects styles into the DOM
+          'css-loader', // turns css into commonjs
+          ],
     },
     {
         test: /\.(png|jpe?g|gif)$/i,

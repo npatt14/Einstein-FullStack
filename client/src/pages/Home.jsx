@@ -3,7 +3,7 @@ import React from 'react'
 import TabBar from '../components/TabBar.jsx';
 import Blank from '../components/Blank.jsx';
 import Feed from '../components/Feed.jsx';
-import '../index.css';
+import './Home.css';
 
 const Home = () => {
   return (

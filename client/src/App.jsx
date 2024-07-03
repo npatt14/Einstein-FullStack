@@ -5,7 +5,7 @@ import Home from './pages/Home.jsx';
 import NewEureka from './pages/NewEureka.jsx';
 import LogIn from './pages/LogIn.jsx';
 import SignUp from './pages/SignUp.jsx';
-import './index.css';
+
 
 
 const App = () => {

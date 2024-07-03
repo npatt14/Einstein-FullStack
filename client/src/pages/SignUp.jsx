@@ -8,9 +8,20 @@ const SignUp = () => {
     const [password, setPassword] = useState('');
     const navigate = useNavigate();
 
+    const handleSubmit = async (event) => {
+        event.preventDefault(); //?
+        try {
+            const response = await axios.post('http://localhost:3000/signup', { username, password }); //?
+            console.log('User signed up successfully:', response.data);
+            navigate('/home');
+        } catch (error) {
+            console.error('There was an error signing up:', error);
+        }
+    }
+
     return (
         <div className="wrapper">
-            <form onSubmit={console.log("submitted")}>
+            <form onSubmit={handleSubmit}>
                 <h1>Sign Up</h1>
                 <div className="input-box">
                     <input type="text" placeholder="Username" value={username} onChange={(e) => setUsername(e.target.value)} required/> 
