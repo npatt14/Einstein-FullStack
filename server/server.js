@@ -1,7 +1,6 @@
 const express = require("express");
 const path = require("path");
 const mongoose = require("mongoose");
-const dotenv = require('dotenv');
 const bcrypt = require("bcrypt");
 const cors = require("cors");
 const history = require("connect-history-api-fallback");
@@ -14,9 +13,9 @@ const PORT = 3000;
 app.use(express.json());
 app.use(cors()); //Middleware for handling CORS Policy
 app.use(history());
-const mongoDBURL = process.env.MONGODB_URL;
 
 app.post("/signup", async (req, res, next) => {
+  console.log("REACHED");
   const { username, password } = req.body;
 
   if (!username || !password) {
@@ -25,8 +24,8 @@ app.post("/signup", async (req, res, next) => {
 
   try {
     const hashedPassword = await bcrypt.hash(password, SALT_WORK_FACTOR);
-    password = hashedPassword.toString();
-    const newUser = new User({ username, password });
+    const hashedPasswordString = hashedPassword.toString();
+    const newUser = new User({ username, password: hashedPasswordString });
     await newUser.save();
     res.locals.newUser = newUser;
     return next();
@@ -55,7 +54,7 @@ app.use((err, req, res, next) => {
 });
 
 mongoose
-  .connect(mongoDBURL)
+  .connect(`mongodb+srv://imnathanpatterson:6vc9gaUzObysIqII@einstein.sr0kt9y.mongodb.net/?retryWrites=true&w=majority&appName=Einstein`)
   .then(() => {
     console.log("Connected to MDB");
   })

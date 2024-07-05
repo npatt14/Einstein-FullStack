@@ -20,7 +20,6 @@ const LogIn = () => {
     }
     
   return (
-    <div className="container">
     <div className="wrapper">
         <form onSubmit={handleSubmit}>
             <h1>Log In</h1>
@@ -39,7 +38,6 @@ const LogIn = () => {
                 <p>Dont have an account? <Link to="/signup">Sign Up</Link></p>
             </div>
         </form>
-    </div>
     </div>
   )
 }

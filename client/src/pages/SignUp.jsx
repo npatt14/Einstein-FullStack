@@ -13,7 +13,7 @@ const SignUp = () => {
         try {
             const response = await axios.post('http://localhost:3000/signup', { username, password }); //?
             console.log('User signed up successfully:', response.data);
-            navigate('/home');
+            navigate('/');
         } catch (error) {
             console.error('There was an error signing up:', error);
         }
@@ -32,10 +32,10 @@ const SignUp = () => {
                     <FaLock className="icon"/>
                 </div>
     
-                <button type="submit">Sign Up</button>
+                <button type="submit" onClick={handleSubmit}>Sign Up</button>
     
                 <div className="register-link">
-                    <p>Already have an account <Link to="/">Log In</Link></p>
+                    <p>Already have an account? <Link to="/login">Log In</Link></p>
                 </div>
             </form>
         </div>

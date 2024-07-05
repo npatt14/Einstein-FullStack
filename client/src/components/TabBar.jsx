@@ -9,7 +9,7 @@ const TabBar = () => {
                 <img src={imageSrc} alt="Image" />
             </div>
             <div className="brandName">
-                <h1>Einstein</h1>
+                <h1></h1>
             </div>
         </div>
     </div>
