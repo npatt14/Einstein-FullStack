@@ -1,5 +1,5 @@
-import React from 'react';
-import '../pages/Home.css';
+import React from "react";
+import "../pages/Home.css";
 
 const Eureka = ({ title, date, body }) => {
   return (

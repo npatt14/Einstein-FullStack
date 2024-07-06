@@ -56,7 +56,9 @@ app.use((err, req, res, next) => {
 });
 
 mongoose
-  .connect(`mongodb+srv://imnathanpatterson:6vc9gaUzObysIqII@einstein.sr0kt9y.mongodb.net/?retryWrites=true&w=majority&appName=Einstein`)
+  .connect(
+    `mongodb+srv://imnathanpatterson:6vc9gaUzObysIqII@einstein.sr0kt9y.mongodb.net/?retryWrites=true&w=majority&appName=Einstein`
+  )
   .then(() => {
     console.log("Connected to MDB");
   })

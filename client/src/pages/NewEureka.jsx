@@ -1,10 +1,10 @@
-import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
-import './Home.css';
+import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import "./Home.css";
 
 const NewEureka = ({ addEureka }) => {
-  const [title, setTitle] = useState('');
-  const [body, setBody] = useState('');
+  const [title, setTitle] = useState("");
+  const [body, setBody] = useState("");
   const navigate = useNavigate();
 
   const handleSubmit = (e) => {
@@ -12,16 +12,19 @@ const NewEureka = ({ addEureka }) => {
     const date = new Date().toLocaleDateString();
     const newEureka = { title, date, body };
     addEureka(newEureka);
-    navigate('/');
+    navigate("/");
   };
 
   return (
     <div className="new-eureka">
-
       <form onSubmit={handleSubmit}>
         <div>
           <label>Title</label>
-          <input type="text" value={title} onChange={(e) => setTitle(e.target.value)} />
+          <input
+            type="text"
+            value={title}
+            onChange={(e) => setTitle(e.target.value)}
+          />
         </div>
         <div>
           <label>Body</label>
@@ -29,7 +32,6 @@ const NewEureka = ({ addEureka }) => {
         </div>
         <button type="submit">Add Eureka</button>
       </form>
-      
     </div>
   );
 };
