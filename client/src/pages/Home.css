@@ -12,7 +12,7 @@ body {
   }
   
   .logo img {
-    width: 80px;
+    width: 125px;
     height: auto;
   }
   
@@ -35,7 +35,7 @@ body {
     display: flex;
     align-items: center;
     margin-bottom: 20px;
-    margin-left: 160px;
+    margin-left: 140px;
   }
   
   .blank {
@@ -50,10 +50,11 @@ body {
   .eureka-container {
     position: relative;
     margin: 20px;
+    padding-right: 20px;
   }
 
   .eureka {
-    width: 450px;
+    width: 550px;
     padding: 20px;
     border-radius: 10px;
     border: 2px solid black;
@@ -62,7 +63,7 @@ body {
   }
 
   .eureka-shadow {
-    width: 460px;
+    width: 560px;
     padding: 20px;
     border-radius: 10px;
     background-color: black;
@@ -85,7 +86,7 @@ body {
   }
 
   .eureka-body {
-    font-size: 14px;
+    font-size: 16px;
     color: #555;
     text-align: left;
   }
