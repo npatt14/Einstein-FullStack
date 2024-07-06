@@ -1,19 +1,28 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Eureka from './Eureka.jsx';
 import '../pages/Home.css';
+import SearchBar from './SearchBar'
 
 const Feed = ({ eurekas, setEureka }) => {
+  const [searchQuery, setSearchQuery] = useState('');
   const navigate = useNavigate();
 
   const handleAddEureka = () => {
     navigate('/new-eureka');
   }
+// check if any existing eureka title includes user input into search bar
+  const filteredEurekas = eurekas.filter((eureka) => 
+    eureka.title.toLowerCase().includes(searchQuery.toLowerCase())
+  );
 
   return (
     <div className="feed">
-      <button className="plus-button" onClick={handleAddEureka}>+</button>
-      {eurekas.map((eureka, index) => (
+      <div className="feed-header">
+        <SearchBar searchQuery={searchQuery} setSearchQuery={setSearchQuery} />
+        <button className="plus-button" onClick={handleAddEureka}>+</button>
+      </div>
+      {filteredEurekas.map((eureka, index) => (
         <Eureka key={index} title={eureka.title} date={eureka.date} body={eureka.body} />
       ))}
     </div>

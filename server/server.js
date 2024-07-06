@@ -5,6 +5,7 @@ const bcrypt = require("bcrypt");
 const cors = require("cors");
 const history = require("connect-history-api-fallback");
 const User = require("./userModel");
+const { redirect } = require("react-router-dom");
 
 const SALT_WORK_FACTOR = 10;
 const app = express();
@@ -28,6 +29,8 @@ app.post("/signup", async (req, res, next) => {
     const newUser = new User({ username, password: hashedPasswordString });
     await newUser.save();
     res.locals.newUser = newUser;
+    res.redirect("/");
+    console.log("USER SAVED");
     return next();
   } catch (err) {
     next(err);
@@ -36,7 +39,6 @@ app.post("/signup", async (req, res, next) => {
 
 // CATCH ALL ROUTE HANDLER
 app.get("*", (req, res) => {
-  console.log("Nick is taller than Edwin");
   console.log(path.join(__dirname, "../client/src/index.html"));
   res.sendFile(path.join(__dirname, "../client/src/index.html"));
 });
